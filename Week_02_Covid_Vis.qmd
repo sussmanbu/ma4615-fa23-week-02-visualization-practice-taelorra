@@ -1,7 +1,7 @@
 ---
 title: "Week 02: COVID Visualization Activity"
 date: "September, 11 2023"
-author: "**`[[`**Your Name**`]]`**"
+author: "Taelor Anderson"
 ---
 
 Today, we'll be working with a data set related to COVID.
@@ -36,6 +36,25 @@ covid_data_count |>
 ```
 
 1. Write code for a plot and describe what you observe?
+
+```{r q1}
+covid_data_count  |> 
+  filter(state == "FL") |>
+ggplot(aes(x=race, y=Cases,fill=race))+geom_boxplot(alpha=0.3)
+
+```
+
+The median of the white population of cases is highest in the Latinx population, closely followed by the White population, then the black population, with other coming in last. 
+
 2. Are there any conclusions you can draw?
+
+There appears to be a significant difference between the ranges of cases by race, as the Asian population has far less cases than the other race in Alabama.  
+
 3. What were you not able to do due to not having the R knowledge?
+
+I cannot change the color scheme from this weird rainbow palette. I also want to be able to select only certain states to model but I don't know how to filter it to be more than 1 but less than all 50. I also wanted to order the plots so that "Total" was at the end and couldn't figure that out. 
+
+
 4. What other data would be useful to better understand this data?
+
+Data about rate of re-infection could be cool to look at, although I'm not sure how many had been reinfected at this stage in the pandemic. I would also LOVE to compare this to data from 2021 because I love an "over time" comparison.
